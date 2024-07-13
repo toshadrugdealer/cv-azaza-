@@ -1,15 +1,16 @@
 import axios from "axios";
 import { useState } from "react";
 import { useQuery } from "react-query";
-
+const BASE_URL = import.meta.env.VITE_NEWS_BASE_URL;
+const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 async function fetchCoins(page) {
   const options = {
     method: "GET",
-    url: "https://openapiv1.coinstats.app/coins",
+    url: BASE_URL,
     params: { page, limit: "10", currency: "RUB" },
     headers: {
       accept: "application/json",
-      "X-API-KEY": "AmC4iqdjU9BgkumVdj3pRYvVmd51gt35wQQbkKfkjt0=",
+      "X-API-KEY": API_KEY,
     },
   };
   const response = await axios(options);
