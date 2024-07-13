@@ -10,7 +10,7 @@ async function fetchCoins(page) {
     params: { page, limit: "10", currency: "RUB" },
     headers: {
       accept: "application/json",
-      "X-API-KEY": API_KEY,
+      "X-API-KEY": `${API_KEY}=`,
     },
   };
   const response = await axios(options);
